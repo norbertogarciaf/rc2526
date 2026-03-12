@@ -12,6 +12,10 @@ ordena_burbuja(Lista, RT) :- append(Ini,[E1,E2|Fin], Lista), % coge un inicio, u
                              append(Ini, [E2,E1|Fin], R), % pone esa lista restante (R) con los elementos ahora ordenados
                              ordena_burbuja(R, RT). % burbuja de lo que queda
 
+ordena_burbuja(Lista, RT) :- append(_,[E1,E2|_], Lista), % coge un inicio, un par consecutivo de una lista (une dos listas)
+                             E1 =< E2,
+                             ordena_burbuja(Lista, RT). % burbuja de lo que queda
+
 %-----------------------------------------------------
   % ordena(+Lista).
     % es cierto cuando Lista está ordenadana de
@@ -22,4 +26,5 @@ ordenada([]).
 
 ordenada([_]).
 
-ordenada([Cab1, Cab2|Resto]) :- Cab1 =< Cab2, ordenada([Cab2|Resto]).
+ordenada([Cab1, Cab2|Resto]) :- Cab1 =< Cab2, 
+    							ordenada([Cab2|Resto]).
