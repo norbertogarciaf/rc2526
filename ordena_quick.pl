@@ -12,7 +12,7 @@ divide(_, [], [], []). % caso base - ningún elemento -> lista vacía
 divide(Elem, [Cab|Resto], Menores, [Cab|Mayores]) :- Elem < Cab, % si los numeros son mayores, ese elemento es menor
     												 divide(Elem, Resto, Menores, Mayores). % sigo son los restantes mayores
 
-divide(Elem, [Cab|Resto], [Cab|Menores], Mayores):- Elem > Cab, % si los numeros son menores, ese elemento es mayor
+divide(Elem, [Cab|Resto], [Cab|Menores], Mayores):- Elem >= Cab, % si los numeros son menores, ese elemento es mayor
         											divide(Elem, Resto, Menores, Mayores). % sigo con los restantes menores
 
 %---------------------------------------------------
