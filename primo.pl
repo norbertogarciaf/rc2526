@@ -39,7 +39,7 @@ primosEntrexy(X,Y, [X|R]):- X<Y,
                             X2 is X+1,
                             primosEntrexy(X2,Y, R),
                             primo(X).
-rimosEntrexy(X,Y, R):- X<Y,
+primosEntrexy(X,Y, R):- X<Y,
                         X2 is X+1,
                         primosEntrexy(X2,Y, R),
                         \+ primo(X).
